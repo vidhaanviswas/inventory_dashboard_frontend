@@ -1,0 +1,118 @@
+/* ===== Analytics Page Layout ===== */
+.analytics-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Header */
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.analytics-title {
+  font-size: 1.2rem;
+}
+
+.analytics-subtitle {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Header Right */
+.analytics-header-right {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Stats grid */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.analytics-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.analytics-card-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.analytics-card-value {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.analytics-card-trend {
+  font-size: 0.75rem;
+}
+
+.analytics-card-trend.positive {
+  color: #4ade80;
+}
+
+.analytics-card-trend.negative {
+  color: #f97373;
+}
+
+/* Chart card */
+.analytics-chart-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  padding: 16px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+}
+
+/* Chart title row */
+.analytics-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.analytics-chart-sub {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Reuse a bar-chart style but scoped */
+.analytics-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  height: 180px;
+  padding: 8px 4px 0;
+}
+
+.analytics-bar {
+  flex: 1;
+  background: linear-gradient(to top, #3b82f6, #22c55e);
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.analytics-bar span {
+  position: absolute;
+  bottom: -18px;
+  font-size: 0.7rem;
+  color: var(--muted);
+}

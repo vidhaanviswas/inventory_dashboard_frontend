@@ -1,0 +1,218 @@
+/* ===== Settings Page Layout ===== */
+.settings-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.settings-container {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Profile Card */
+.settings-profile-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  padding: 24px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.6);
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.settings-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.settings-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.settings-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.settings-profile-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.settings-profile-email {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.settings-photo-btn {
+  margin-top: 4px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--input-border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: 0.15s;
+  width: fit-content;
+}
+
+.settings-photo-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Card container */
+.settings-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  padding: 20px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.6);
+}
+
+.settings-card-title {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Form layout */
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.settings-field span {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.settings-input,
+.settings-select {
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text);
+  border-radius: 12px;
+}
+
+.settings-input:focus,
+.settings-select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Theme toggle pills */
+.settings-theme-toggle {
+  display: inline-flex;
+  gap: 6px;
+  background: rgba(148, 163, 184, 0.1);
+  padding: 4px;
+  border-radius: 999px;
+}
+
+.theme-pill {
+  border: none;
+  background: transparent;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: 0.15s;
+}
+
+.theme-pill.active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Success & error messages with animation */
+.settings-success,
+.settings-error {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.settings-success {
+  background: rgba(34, 197, 94, 0.1);
+  border-left: 4px solid #22c55e;
+  color: #4ade80;
+}
+
+.settings-error {
+  background: rgba(248, 113, 113, 0.1);
+  border-left: 4px solid #f97373;
+  color: #fecaca;
+}
+
+.settings-success-animate {
+  animation: settingsSuccessFade 0.25s ease-out forwards;
+}
+
+@keyframes settingsSuccessFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons */
+.settings-save-btn {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  cursor: pointer;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: white;
+  transition: 0.15s;
+  margin-top: 4px;
+}
+
+.settings-save-btn:hover {
+  background: var(--accent-hover);
+}
+
+.settings-save-btn-secondary {
+  background: transparent;
+  border-color: var(--input-border);
+  color: var(--text);
+}
+
+.settings-save-btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}

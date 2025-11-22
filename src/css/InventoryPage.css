@@ -1,0 +1,462 @@
+/* ===== Inventory Page Layout ===== */
+.inventory-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Header */
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inventory-title {
+  font-size: 1.2rem;
+}
+
+.inventory-sync {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Buttons */
+.inventory-btn {
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.inventory-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Filters Row */
+.inventory-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.inventory-input {
+  padding: 7px 10px;
+  border-radius: 10px;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.inventory-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.inventory-input::placeholder {
+  color: var(--muted);
+}
+
+/* Meta Info */
+.inventory-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.inventory-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: rgba(148, 163, 184, 0.1);
+}
+
+.inventory-pill.subtle {
+  opacity: 0.8;
+}
+
+/* Table Card */
+.inventory-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  padding: 14px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+  overflow: hidden;
+}
+
+/* Table */
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.87rem;
+}
+
+.inventory-table thead {
+  background: rgba(148, 163, 184, 0.06);
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Ensure vertical centering and predictable widths */
+.inventory-table th,
+.inventory-table td {
+  vertical-align: middle;
+}
+
+/* Column sizing and alignment */
+.inventory-table th.sku-cell,
+.inventory-table td.sku-cell {
+  width: 14%;
+  text-align: left;
+}
+
+.inventory-table th.name-cell,
+.inventory-table td.name-cell {
+  width: 26%;
+  text-align: left;
+}
+
+.inventory-table th.warehouse-cell,
+.inventory-table td.warehouse-cell {
+  width: 18%;
+  text-align: left;
+}
+
+.inventory-table th.numeric-cell,
+.inventory-table td.numeric-cell {
+  width: 10%;
+  text-align: right;
+}
+
+.inventory-table th.total-cell,
+.inventory-table td.total-cell {
+  width: 12%;
+  text-align: right;
+}
+
+.inventory-table th.status-cell,
+.inventory-table td.status-cell {
+  width: 10%;
+  text-align: center;
+}
+
+.inventory-table th.actions-cell,
+.inventory-table td.actions-cell {
+  width: 10%;
+  text-align: right;
+}
+
+.inventory-table th {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.inventory-table tr:nth-child(even) td {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+body[data-theme='light'] .inventory-table tr:nth-child(even) td {
+  background: rgba(148, 163, 184, 0.1);
+}
+
+.inventory-table tr:hover td {
+  background: rgba(56, 189, 248, 0.08);
+}
+
+/* Status Highlighting */
+.inv-pos {
+  color: #4ade80;
+  /* green */
+  font-weight: 600;
+}
+
+.inv-neg {
+  color: #f87171;
+  /* red */
+  font-weight: 600;
+}
+
+/* Status pills */
+.inv-status {
+  display: inline-flex;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.inv-status-in_stock {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.inv-status-less {
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+}
+
+.inv-status-out_of_stock {
+  background: rgba(248, 113, 113, 0.18);
+  color: #f97373;
+}
+
+/* Modal */
+.inv-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.inv-modal {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+  padding: 18px 18px 16px;
+  animation: invModalIn 0.18s ease-out;
+}
+
+.inv-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.inv-modal-close {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.inv-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inv-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inv-modal-field span {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.inv-modal-field input,
+.inv-modal-field select {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.inv-modal-field input:focus,
+.inv-modal-field select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.inv-modal-error {
+  font-size: 0.8rem;
+  color: #f97373;
+}
+
+.inv-modal-actions {
+  margin-top: 6px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@keyframes invModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* SKU suggestions dropdown */
+.sku-suggestions {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  right: 0;
+  max-height: 260px;
+  overflow: auto;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.5);
+  z-index: 60;
+}
+
+.sku-suggestion-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.sku-suggestion-item.highlighted {
+  background: rgba(99, 102, 241, 0.06);
+}
+
+.sku-code {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.sku-name {
+  color: var(--muted);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.selected-sku-name {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* highlight matching substring */
+.match-highlight {
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.14), rgba(99, 102, 241, 0.06));
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+/* Action buttons (Edit / Delete) */
+.action-group {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.action-btn {
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.action-btn.secondary {
+  background: rgba(148, 163, 184, 0.04);
+}
+
+.action-btn.danger {
+  background: rgba(248, 113, 113, 0.06);
+  color: #ef4444;
+  border-color: rgba(248, 113, 113, 0.12);
+}
+
+.action-group {
+  align-items: center;
+}
+
+.action-btn {
+  line-height: 1;
+}
+
+/* Table wrapper for horizontal scrolling on small/medium screens */
+.inventory-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.inventory-table {
+  min-width: 900px;
+  /* allow columns to keep proportions on narrow viewports */
+}
+
+/* Responsive: stack rows on small screens */
+@media (max-width: 760px) {
+  .inventory-table {
+    border: 0;
+    font-size: 0.95rem;
+  }
+
+  .inventory-table thead {
+    display: none;
+  }
+
+  .inventory-table,
+  .inventory-table tbody,
+  .inventory-table tr,
+  .inventory-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .inventory-table tr {
+    margin-bottom: 12px;
+    background: transparent;
+    border-bottom: 1px solid var(--card-border);
+    padding: 8px 0;
+  }
+
+  .inventory-table td {
+    padding: 6px 10px;
+    border: none;
+    text-align: left;
+  }
+
+  .inventory-table td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  /* make action buttons align to the right area visually */
+  .inventory-table td.actions-cell {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* numeric values lose right alignment on small screens */
+  .inventory-table td.numeric-cell,
+  .inventory-table td.total-cell {
+    text-align: left;
+  }
+}
