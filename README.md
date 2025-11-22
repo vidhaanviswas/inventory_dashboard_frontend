@@ -90,18 +90,6 @@ The frontend consumes REST APIs from a separate backend service (Node.js + Mongo
 🔗 **Live Demo:**  
 https://inventory-dashboard-frontend-dusky.vercel.app
 
-> Note: The app requires a running backend API (Node.js + MongoDB Atlas) and correct configuration of `VITE_API_URL`.
-
-### Screenshots
-
-> _Add your own screenshots into a `/screenshots` folder and update the paths below._
-
-![Inventory Dashboard](screenshots/inventory-dashboard.png)  
-_Main dashboard showcasing key inventory metrics and visualizations._
-
-![Product Details](screenshots/product-details.png)  
-_Detailed view of individual product information, including stock levels and history._
-
 ---
 
 ## 🚀 Quick Start
