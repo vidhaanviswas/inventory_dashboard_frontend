@@ -27,7 +27,7 @@ export default function LoadingScreen() {
           <span className="loading-logo-dot" />
           <span>Inventory Hub</span>
         </div>
-        <p className="loading-title">Preparing your dashboard…</p>
+        <p className="loading-title">Preparing your dashboard..</p>
         <p className="loading-subtitle">Syncing modules and checking sessions.</p>
 
         <div className="loading-progress">
