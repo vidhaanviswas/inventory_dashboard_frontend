@@ -90,6 +90,8 @@ The frontend consumes REST APIs from a separate backend service (Node.js + Mongo
 🔗 **Live Demo:**  
 https://inventory-dashboard-frontend-dusky.vercel.app
 
+Login : you@example.com | test1234
+
 ---
 
 ## 🚀 Quick Start
